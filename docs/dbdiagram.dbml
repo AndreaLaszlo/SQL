@@ -1,0 +1,42 @@
+Table customers {
+  id integer [primary key, increment]
+  name text [not null]
+  main_address varchar [not null]
+  email varchar [not null, unique]
+}
+
+Table orders {
+  id integer [primary key, increment]
+  status order_statuses [not null, default: 'RECEIVED']
+  placed_at timestamp [default: 'NOW()']
+  customer_id integer [not null]
+}
+
+Table ordered_products {
+  order_id integer [not null]
+  product_id integer [not null]
+  quantity integer [not null, default: 1] 
+  unit_price decimal(10, 2) [not null, check: `unit_price >= 0`]
+
+  indexes {
+   (order_id, product_id) [pk]
+  } 
+}
+
+Table products {
+  id integer [primary key, increment]
+  name text [not null, unique]
+  price decimal(10, 2) [not null, check: `price >= 0`]
+  preparation_time_mins integer [not null, check: `preparation_time_mins > 0`]
+}
+
+Enum order_statuses {
+  RECIEVED
+  UNDER_PREPARATION
+  UNDER_DELIVERY
+  DELIVERED
+}
+
+Ref: customers.id < orders.customer_id
+Ref: products.id < ordered_products.product_id
+Ref: orders.id < ordered_products.order_id
