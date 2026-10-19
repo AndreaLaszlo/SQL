@@ -1,11 +1,11 @@
 # SQL Practice
 
-1. Project overview
+# 1. Project overview
 
 The project is a relational database designed to represent a relational database of a restaurant order management system. It servers as a practical environment to practice and showcase my sql knowledge in PostgreSQL.
 The database models customers, orders, products. It provides a foundation for practicing data definition, manipulation, relational queries and data analysis.
 
-2. Project objectives
+# 2. Project objectives
 
 The main objectives for this project are:
 - design a relational database schema
@@ -14,7 +14,7 @@ The main objectives for this project are:
 - practice sql queries from the basics to advanced levels
 - answer business questions using structured data
 
-3. Database Schema
+# 3. Database Schema
 
 The database consists of four tables: 
 - customers - stores customer informations
@@ -25,13 +25,13 @@ The database consists of four tables:
 Between the orders and the connection table and also between the products and connection table there is a one to many relationship.
 The connection table's primary key consists of the (customer_id, order_id) constraint. This ensures that one product only appears once within one order in the ordered items table-
 
-4. Technologies
+# 4. Technologies
 
 - PostgreSQL
 - SQL
 - dbdiagram.io for relational database representation
 
-5. SQL Concepts
+# 5. SQL Concepts
 
 The project covers the below concepts:
 - DDL: create table, data types and constraints
@@ -42,15 +42,16 @@ The project covers the below concepts:
 - window functions and analytical queries
 - data integrity and relational database design
 
-6. Repository structure
+# 6. Repository structure
 
 The repository follows the below structure:
 - schema/ — database schema and table definitions.
 - data/ — sample data for testing and analysis.
 - queries/ — SQL exercises organized by topic and difficulty.
+- docs/ - relational database and related documentations for the project
 - README.md — project documentation.
  
-7. Business questions
+# 7. Business questions
 
 - Which products are ordered most frequently?
 - Which customers place the most orders?
@@ -59,7 +60,7 @@ The repository follows the below structure:
 - Which products generate the highest sales?
 - How do customer ordering patterns change over time?
 
-8.  Getting started
+# 8.  Getting started
 
   1. Create a PostgreSQL database.
   2. Execute the SQL scripts in the appropriate order.
